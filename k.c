@@ -1,3 +1,5 @@
+// Programa para converter Números romanos em decimais.
+
 #include <stdio.h>
 #include <string.h>
 
@@ -5,16 +7,21 @@ int corresponde(char a);
 
 int main(void)
 {
-    int i, fnum = 0;
+    int i, fnum = 0; // inicializa a váriavel fnum a zero
     char x[100];
     printf("Inserir número romano: ");
     scanf("%s", x);
     for (i = 0; i < strlen(x); i++)
     {
-        if (corresponde(x[i]) >= corresponde(x[i+1]))
+        if (corresponde(x[i]) == 0) // Verifica a validade do número romano introduzido
+            {
+                printf(" numero introduzido invalido, a numeraçao romana aceita apenas os seguinteos caracteres: M,D,C,L,X,V e I ");
+                return 0;
+            }
+        if (corresponde(x[i]) >= corresponde(x[i+1])) // Permite solucionar o problema de IV e IX, comparando com o x[i] + 1, se for maior incremanta caso contrário subtrai a fnum.
             fnum += corresponde(x[i]);
         else
-            fnum -= corresponde(x[i]);
+            fnum -= corresponde(x[i]); 
     }
 
     printf("O número inteiro é: %d\n", fnum);
@@ -33,7 +40,7 @@ int corresponde(char a)
     case 'X': num = 10; break;
     case 'V': num = 5; break;
     case 'I': num = 1; break;
-    default: num = 0;
+    default: num = 0; 
     
     }
     return num;
