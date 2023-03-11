@@ -13,7 +13,7 @@ int main(void)
     scanf("%s", x);
     for (i = 0; i < strlen(x); i++)
     {
-        if (corresponde(x[i]) == 0) // Verifica a validade do número romano introduzido, usando a função corresponde caso qualquer caracter diferente de M,D,C,L,X,V,I retorna 0 validando a assim o valor inserido pelo utilizador.
+        if (corresponde(x[i]) == 0) // Verifica a validade do número romano introduzido, usando a função corresponde em de caso qualquer caracter diferente de M,D,C,L,X,V,I retorna 0 validando a assim o valor inserido pelo utilizador.
             {
                 printf(" Número introduzido invalido, a númeraçao romana aceita apenas os seguintes caracteres: M,D,C,L,X,V e I ");
                 return 0;
