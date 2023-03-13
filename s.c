@@ -19,15 +19,15 @@ int main(int argc, char* argv[])
 // Verifica sintaxe e ficheiro
     if (argc != 2) 
     {
-        printf("\n A sintaxe do programa é: Ana.exe %s [ficheiro] \n", argv[0]);
-        return 1;
+        printf("\n A sintaxe do programa é: poli.exe %s [ficheiro] \n", argv[0]);
+        return 0;
     }
 
     fp = fopen(argv[1], "r");
     if (fp == NULL) 
     {
         printf("Não foi possível abrir o ficheiro, verificou a sintaxe? ou o ficheiro %s corrompido\n ", argv[1]);
-        return 1;
+        return 0;
     }
 // ------
 
@@ -57,14 +57,14 @@ int main(int argc, char* argv[])
 //---------
 
 
-void inverte(char word[], char reversed[])  // invertemos a string
+void inverte(char word[], char drow[])  // invertemos a string
 {
     int i, j;
     for (i = strlen(word) - 1, j = 0; i >= 0; i--, j++) 
     {
-        reversed[j] = word[i];
+        drow[j] = word[i];
     }
-    reversed[j] = '\0';
+    drow[j] = '\0';
 }
 
 
